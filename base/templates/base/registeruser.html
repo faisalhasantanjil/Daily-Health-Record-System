@@ -1,0 +1,96 @@
+{% extends 'bottom.html' %}
+
+{% block title %}
+<title>Register your account</title>
+{% endblock title %}
+
+{% block content %}
+<div class="w-50 mx-auto p-5 border border-info rounded border-3 mt-5">
+    <div class="w-75 mx-auto px-3">
+        <p class="h4">Register Your Account</p>
+    </div>
+    <br>
+    <br>
+    <div class="w-75 mx-auto">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+                {{form.email.label}}<span>:</span>
+                <br>
+                {{form.email}}
+            </div>
+
+            {% comment %} <div class="form-outline mb-4">
+                {{form.username.label}}<span>:</span>
+                <br>
+                {{form.username}}
+            </div>  {% endcomment %}
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                {{form.password1.label}}<span>:</span>
+                <br>
+                {{form.password1}}
+            </div>
+
+            <!-- Password Confirmation -->
+            <div class="form-outline mb-4">
+                {{form.password2.label}} <span>:</span>
+                <br>
+                {{form.password2}}
+            </div>
+
+            <!-- Submit button -->
+            <input type="submit" name="Create User" value="Create Account">
+
+            <!-- Register buttons -->
+            
+        </form>
+        {{form.errors}}
+        <div class="text-center">
+            <p>or sign up with:</p>
+            <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %} 
+
+
+
+
+
+
+
+{% comment %} {% block content %}
+
+<form method="POST" action="">
+    {% csrf_token %} 
+  
+    {{form.as_p}}
+
+
+   {{form.username.label}}
+    {{form.username}}
+    {{form.email.label}}
+    {{form.email}}
+    {{form.password1.label}}
+    {{form.password1}}
+    {{form.password2.label}}
+    {{form.password2}}
+    
+  
+    {% for field in form  %}
+    {{field.label}}
+    {{field}}
+    <br>
+    {% endfor %}
+   
+
+    <input type="submit" name="Create User">
+</form> 
+{% endblock content %} {% endcomment %}

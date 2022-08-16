@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>User information</title>
+{% endblock title %}
+
+{% block content %}
+<div class="w-50 mx-auto p-5 border border-info rounded border-3 mt-5">
+    <div class="w-75 mx-auto px-3">
+        <p class="h4">User Information</p>
+    </div>
+    <br>
+    <br>
+    <div class="w-75 mx-auto">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {% comment %} {{form}} {% endcomment %}
+
+            <div class="form-outline mb-4">
+                {{form.name.label}}<span>:</span>
+                <br>
+                {{form.name}}
+            </div>
+            <div class="form-outline mb-4">
+                {{form.gender.label}}<span>:</span>
+                <br>
+                {{form.gender}}
+            </div>
+            <div class="form-outline mb-4">
+                {{form.age.label}}<span>:</span>
+                <br>
+                {{form.age}}
+            </div>
+            <div class="form-outline mb-4">
+                {{form.weight.label}}<span>:</span>
+                <br>
+                {{form.weight}}
+            </div>
+            <div class='row'>
+                <div class="form-outline mb-4 col">
+                    <br>
+                    <label for="height" class="form-label">Height: </label>
+                </div>
+                <div class="form-outline mb-4 col">
+                    <label for="height" class="form-label">feet</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" name="feetheight">
+                </div>
+                <div class="form-outline mb-4 col">
+                    <label for="height" class="form-label">inch</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" name="inchheight">
+                </div>
+            </div>
+
+
+            <!-- Submit button -->
+            <input type="submit" name="User information Create" value="Confirm">
+
+        </form>
+        {{form.errors}}
+
+    </div>
+</div>
+
+{% endblock content %}

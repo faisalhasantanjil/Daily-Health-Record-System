@@ -1,0 +1,43 @@
+{% extends 'bottom.html' %}
+
+{% block title %}
+<title>Login your account</title>
+{% endblock title %}
+
+{% block content %}
+<div class="w-75 mxauto p-5">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <input type="email" id="form2Example1" class="form-control" name="username" />
+            <label class="form-label" for="form2Example1">Email address</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            <input type="password" id="form2Example2" class="form-control" name="password" />
+            <label class="form-label" for="form2Example2">Password</label>
+        </div>
+
+        <!-- Submit button -->
+        <input type="submit" value="Login">
+        <!-- <input type="button" class="btn btn-primary btn-block mb-4">Sign in</button> -->
+
+        <!-- Register buttons -->
+
+    </form>
+    {% for message in messages  %}
+    <p id='messages'>{{message}} </p>
+    {% endfor %}
+    <div class="text-center">
+        <p>Not a member? <a href={% url 'registeruser' %}>Register</a></p>
+        <p>or signin with:</p>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-google"></i>
+        </button>
+    </div>
+</div>
+
+{% endblock content %}
