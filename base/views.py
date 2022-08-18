@@ -1,5 +1,6 @@
 
 # from urllib.request import Request
+import math
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import UserCreationForm
@@ -63,6 +64,7 @@ def registeruser(request):
 
 
 def userinfo(request):
+
     form = UserInformationForm()
     print(form)
     user_email = request.user.email
