@@ -1,0 +1,17 @@
+
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+<title>View Your Record</title>
+{% endblock title %}
+
+{% block content %}
+{{bmi}}
+{% if good %}
+normal
+{% endif %}
+{% if above %}
+not normal
+{% endif %}
+{% endblock content %}

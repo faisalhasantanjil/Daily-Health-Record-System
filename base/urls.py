@@ -11,6 +11,8 @@ urlpatterns = [
     path('userinfo/', views.userinfo, name='userinfo'),
     path('viewrecord/', views.viewrecord, name='viewrecord'),
     path('addrecord/', views.addrecord, name='addrecord'),
+    path('bmicalculate/', views.bmicalculate, name='bmicalculate'),
+    path('bmiresult/', views.bmiresult, name='bmiresult'),
 
 
 ]

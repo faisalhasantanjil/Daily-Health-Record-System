@@ -3,5 +3,7 @@
 <title>View Your Record</title>
 {% endblock title %}
 {% block content %}
-This will show record
+{% for record in records %}
+{{record.email}}
+{% endfor %}
 {% endblock content %}

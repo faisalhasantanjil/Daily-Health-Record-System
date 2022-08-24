@@ -1,9 +1,50 @@
 {% extends 'main.html' %}
 
 {% block title %}
-<title>Add Your Record</title>
+<title>Add Record</title>
 {% endblock title %}
 
 {% block content %}
-This will add record
+<div class="w-50 mx-auto p-5 border border-info rounded border-3 mt-5">
+    <div class="w-75 mx-auto px-3">
+        <p class="h4">Add File</p>
+    </div>
+    <br>
+    <br>
+    <div class="w-75 mx-auto">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% comment %} {{form}} {% endcomment %}
+
+            {% comment %} <div class="form-outline mb-4">
+                {{form.patient.label}}<span>:</span>
+                <br>
+                {{form.patient}}
+            </div> {% endcomment %}
+            <div class="form-outline mb-4">
+                {{form.referBy.label}}<span>:</span>
+                <br>
+                {{form.referBy}}
+            </div>
+            <div class="form-outline mb-4">
+                {{form.typeofrecord.label}}<span>:</span>
+                <br>
+                {{form.typeofrecord}}
+            </div>
+            <div class="form-outline mb-4">
+                {{form.upload_file.label}}<span>:</span>
+                <br>
+                {{form.upload_file}}
+            </div>
+            
+
+            <!-- Submit button -->
+            <input type="submit" name="Add record file" value="Submit">
+
+        </form>
+        {{form.errors}}
+
+    </div>
+</div>
+
 {% endblock content %}
