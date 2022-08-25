@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>Update Your Health Information</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container w-75">
+    <div class="p-5">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">{{form.blood_sugar.label}} </div>
+                <div class="col">{{form.blood_pressure.label}} </div>
+                <div class="col">{{form.weight.label}} </div>
+            </div>
+            <div class="row">
+                <div class="col">{{form.blood_sugar}} </div>
+                <div class="col">{{form.blood_pressure}} </div>
+                <div class="col">{{form.weight}} </div>
+            </div>
+            <br>
+            <div class="float-end"><input type="submit" name="User information Create" value="Update"></div>
+        </form>
+    </div>
+</div>
+<div class="container w-75">
+    <div>
+        <table class="table table-primary">
+            <thead>
+              <tr>
+                <th scope="col">Blood Sugar</th>
+                <th scope="col">Blood Pressure</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for healthinfo in healthinfos %}
+                <tr>
+                    <td>{{healthinfo.blood_sugar}}</td>
+                    <td>{{healthinfo.blood_pressure}}</td>
+                    <td>{{healthinfo.weight}}</td>
+                    <td>{{healthinfo.update_date}}</td>
+                  </tr>
+                {% endfor %}
+              
+              
+            </tbody>
+          </table>
+    </div>
+</div>
+
+{% endblock content %}

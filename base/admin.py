@@ -5,3 +5,4 @@ from .models import *
 
 admin.site.register(UserInformation)
 admin.site.register(RecordFile)
+admin.site.register(HealthInfo)

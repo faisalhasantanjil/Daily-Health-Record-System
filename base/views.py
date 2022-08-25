@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 #
-from .forms import CreateUserForm, UserInformationForm, RecordFileForm
+from .forms import CreateUserForm, HealthInfoForm, UserInformationForm, RecordFileForm
 from .models import *
 
 # Create your views here.
@@ -88,6 +88,14 @@ def userinfo(request):
 @login_required(login_url='loginuser')
 def addrecord(request):
     user_email = request.user.email
+    users = UserInformation.objects.values()
+    valid_users = list(users)
+    print(type(valid_users))
+    for valid_user in valid_users:
+        print(valid_user)
+        # if valid_user.email == user_email:
+        #     return redirect('bmicalculate')
+
     form = RecordFileForm()
     # patient = UserInformation.objects.get(email=user_email)
     # print(patient)
@@ -107,6 +115,8 @@ def addrecord(request):
 def viewrecord(request):
     user_email = request.user.email
     records = RecordFile.objects.filter(email=user_email)
+    print(records.datetimes)
+    # print(records.__dict__.keys())
     context = {'records': records}
     return render(request, 'base/viewrecord.html', context)
 
@@ -142,3 +152,18 @@ def bmiresult(request):
 
     context = {}
     return render(request, 'base/bmicalculate.html', context)
+
+
+def addhealthinfo(request):
+    form = HealthInfoForm()
+    user_email = request.user.email
+    healthinfos = HealthInfo.objects.filter(email=user_email)
+    if request.method == 'POST':
+        form = HealthInfoForm(request.POST)
+        form.instance.email = user_email
+        if form.is_valid():
+            form.save()
+            return redirect('addhealthinfo')
+
+    context = {'form': form, 'healthinfos': healthinfos}
+    return render(request, 'base/addhealthinfo.html', context)

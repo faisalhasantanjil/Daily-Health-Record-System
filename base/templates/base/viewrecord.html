@@ -1,9 +1,13 @@
 {% extends 'main.html' %}
+{% load static %}
 {% block title %}
 <title>View Your Record</title>
 {% endblock title %}
 {% block content %}
 {% for record in records %}
-{{record.email}}
+<a href="{{record.upload_file.url}}" download=>{{record.upload_file}}</a>
+<br>
+{{record.upload_date}}
+<br>
 {% endfor %}
 {% endblock content %}

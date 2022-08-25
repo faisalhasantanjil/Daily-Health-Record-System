@@ -38,3 +38,14 @@ class RecordFile(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class HealthInfo(models.Model):
+    email = models.CharField(max_length=200, null=True, default='')
+    blood_sugar = models.FloatField(null=True)
+    blood_pressure = models.CharField(max_length=100, null=True)
+    weight = models.FloatField(null=True)
+    update_date = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.email
