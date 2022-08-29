@@ -16,11 +16,11 @@
                 </div>
                 <div class="form-outline mb-4 col">
                     <label for="height" class="form-label">feet</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" name="feetheight">
+                    <input type="number" class="form-control" id="exampleInputPassword1" name="feetheight" value='0'>
                 </div>
                 <div class="form-outline mb-4 col">
                     <label for="height" class="form-label">inch</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" name="inchheight">
+                    <input type="number" class="form-control" id="exampleInputPassword1" name="inchheight" value='0'>
                 </div>
             </div>
             <div class='row'>
@@ -39,5 +39,37 @@
         </form>
     </div>
 </div>
+
+{% if resultinterface %}
+
+
+<br>
+<br>
+<table class="w-50 table-borderless mx-auto table text-white h1">
+    <tbody>
+        <tr>
+            <td>BMI </td>
+            <td>{{bmi}} </td>
+        </tr>
+        <tr>
+            {% if below %}
+            <td>You are underweight.</td>
+            {% endif %}
+            {% if good %}
+            <td>Your weight is normal</td>
+            {% endif %}
+            {% if above %}
+            <td>You are overweight.</td>
+            {% endif %}
+            {% if obsess %}
+            <td>Your weight is Obese</td>
+            {% endif %}
+
+        </tr>
+
+    </tbody>
+</table>
+
+{% endif %}
 
 {% endblock content %}

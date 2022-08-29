@@ -5,7 +5,7 @@
 {% endblock title %}
 
 {% block content %}
-<div class="w-50 mx-auto p-5 border border-info rounded border-3 mt-5">
+<div class="w-50 mx-auto p-5 border border-secondary rounded border-3 mt-5">
     <div class="w-75 mx-auto px-3">
         <p class="h4">Register Your Account</p>
     </div>
@@ -48,13 +48,13 @@
             
         </form>
         {{form.errors}}
-        <div class="text-center">
+        {% comment %} <div class="text-center">
             <p>or sign up with:</p>
             <button type="button" class="btn btn-link btn-floating mx-1">
                 <i class="fab fa-google"></i>
             </button>
 
-        </div>
+        </div> {% endcomment %}
     </div>
 </div>
 

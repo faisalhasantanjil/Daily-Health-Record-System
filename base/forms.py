@@ -34,3 +34,15 @@ class HealthInfoForm(ModelForm):
         model = HealthInfo
         # fields = ['patient', 'referBy', 'typeofrecord', 'upload_file']
         fields = ['blood_sugar', 'blood_pressure', 'weight']
+
+
+class DietRecordForm(ModelForm):
+    class Meta:
+        model = DietRecord
+        exclude = ('email',)
+
+
+class ExerciseRecordForm(ModelForm):
+    class Meta:
+        model = ExerciseRecord
+        exclude = ('email',)

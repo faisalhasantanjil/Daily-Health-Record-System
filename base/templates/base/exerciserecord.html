@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>View Your Record</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <p class="h3">Record Your Exercise Time</p>
+    <br>
+</div>
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="container">
+
+            <div class="row">
+                <div class="col-1">
+                    {{form.walking.label}}:
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.walking}}
+                </div>
+                <div class="col-1 ms-5">
+                    {{form.walking_unit}}
+                </div>
+                <div class="col-3">
+                    {{form.walking_distance}} km
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-1">
+                    {{form.jogging.label}}:
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.jogging}}
+                </div>
+                <div class="col-1 ms-5">
+                    {{form.jogging_unit}}
+                </div>
+                <div class="col-3">
+                    {{form.jogging_distance}} km
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-1">
+                    {{form.running.label}}:
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.running}}
+                </div>
+                <div class="col-1 ms-5">
+                    {{form.running_unit}}
+                </div>
+                <div class="col-3">
+                    {{form.running_distance}} km
+                </div>
+
+            </div>
+
+        </div>
+        <div class="float-end p-5 m-5"><input type="submit" name="User information Create" value="Update"></div>
+
+        {% comment %} <button type="button" class="btn btn-link btn-lg btn-floating mx-1">
+            <input type="submit" value="Submit">
+        </button> {% endcomment %}
+    </form>
+</div>
+{% endblock content %}

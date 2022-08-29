@@ -1,9 +1,176 @@
 {% extends 'main.html' %}
+{% load static %}
 
 {% block content %}
 {% for message in messages  %}
-    <p id='messages'>{{message}}  </p>
-    
+<p id='messages' class="text-success">{{message}} </p>
 {% endfor %}
-Hello {{user}}
+{% comment %} Hello {{user}} {% endcomment %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-9 pt-5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-2">
+                        <div class='mx-auto'>
+
+                            <img class=" mx-auto rounded-circle" src="{% static 'images/plus_logo.png' %}" alt=""
+                                width="75" height="130">
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <div class=" bg-image hover-zoom border-0" style="width: 18rem;">
+                            <a class="nav-link" href="/bmicalculate"><img class=" mx-auto rounded-circle "
+                                    src="{% static 'images/bmi_logo.png' %}" alt="" width="75" height="120"></a>
+
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="mx-auto">
+                                <p class="h6" style='font-size: 13.5px'>Calculate BMI</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class=" border-0 hover-zoom" style="width: 18rem;">
+                            <a class="nav-link" href="/addrecord"><img class=" mx-auto rounded-circle"
+                                    src="{% static 'images/record_file_logo.png' %}" alt="" width="75" height="120"></a>
+
+                            <div class=" mx-auto">
+                                <p class="">Add File</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="bg-image border-0 hover-zoom" style="width: 18rem;">
+                            <a class="nav-link" href="/addhealthinfo"><img class=" mx-auto rounded-circle"
+                                    src="{% static 'images/health_information.jfif' %}" alt="" width="85"
+                                    height="120"></a>
+
+                            <div class=" mx-auto">
+                                <p class="">Add Health<br> Information</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-2">
+                        <div class='mx-auto'>
+
+                            
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <div class=" bg-image hover-zoom border-0" style="width: 18rem;">
+                            <a class="nav-link" href="/dietrecord"><img class=" mx-auto rounded-circle "
+                                    src="{% static 'images/diet_logo.png' %}" alt="" width="75" height="120"></a>
+
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="mx-auto">
+                                <p class="h6" style='font-size: 13.5px'>Add Diet Record</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class=" border-0 hover-zoom" style="width: 18rem;">
+                            <a class="nav-link" href="/exerciserecord"><img class=" mx-auto rounded-circle"
+                                    src="{% static 'images/exercise_logo.png' %}" alt="" width="75" height="120"></a>
+
+                            <div class=" mx-auto">
+                                <p class="">Add Exercise Record</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <br>
+
+                <div class="row">
+
+                    <div class="col-2">
+                        <div class='mx-auto'>
+
+                            <img class=" mx-auto rounded-circle" src="{% static 'images/eye_logo.jpg' %}" alt=""
+                                width="75" height="120">
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <div class=" bg-image hover-zoom border-0" style="width: 18rem;">
+                            <a class="nav-link" href="/viewrecord"><img class=" mx-auto rounded-circle "
+                                    src="{% static 'images/view_file_logo.jfif' %}" alt="" width="75" height="120"></a>
+
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="mx-auto">
+                                <p class="h6" style='font-size: 13.5px'>View Files</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class=" border-0 hover-zoom" style="width: 18rem;">
+                            <a class="nav-link" href="/addhealthinfo"><img class=" mx-auto rounded-circle"
+                                    src="{% static 'images/health_information.jfif' %}" alt="" width="75"
+                                    height="120"></a>
+
+                            <div class=" mx-auto">
+                                <p class="" style='font-size: 13.5px'>View Health <br>Information</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class=" border-0 hover-zoom" style="width: 18rem;">
+                            <a class="nav-link" href="/viewdietrecord"><img class=" mx-auto rounded-circle"
+                                    src="{% static 'images/view_diet_logo.png' %}" alt="" width="75"
+                                    height="120"></a>
+
+                            <div class=" mx-auto">
+                                <p class="" style='font-size: 13.5px'>Diet Record
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class=" border-0 hover-zoom" style="width: 18rem;">
+                            <a class="nav-link" href="/viewexerciserecord"><img class=" mx-auto rounded-circle"
+                                    src="{% static 'images/view_exercise_logo.jpg' %}" alt="" width="75"
+                                    height="120"></a>
+
+                            <div class=" mx-auto">
+                                <p class="" style='font-size: 13.5px'>Exercise Record
+                            </div>
+                        </div>
+                    </div>
+                    {% comment %} <div class="col-3">
+                        <div class="bg-image border-0 hover-zoom" style="width: 18rem;">
+                            <a class="nav-link" href="/addhealthinfo"><img class=" mx-auto rounded-circle"
+                                    src="{% static 'images/health_information.jfif' %}" alt="" width="85"
+                                    height="130"></a>
+
+                            <div class=" mx-auto">
+                                <p class="" style='font-size: 13.5px'>Add Health<br> Information</p>
+
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <div class="col-3 pt-5">
+            <p class="h4"><u>User Information</u></p>
+            {% for useri in userinfo %}
+            <br>
+            <p class="h5">Name: {{useri.name}}</p>
+            <p class="h5">Email: {{useri.email}}</p>
+            <p class="h5">Gender: {{useri.gender}}</p>
+            <p class="h5">Age: {{useri.age}} cm</p>
+            <p class="h5">Weight: {{useri.weight}} kg</p>
+            <p class="h5">Height: {{useri.height}}</p>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
 {% endblock content %}

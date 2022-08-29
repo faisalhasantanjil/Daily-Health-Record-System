@@ -15,6 +15,11 @@ urlpatterns = [
     path('bmicalculate/', views.bmicalculate, name='bmicalculate'),
     path('bmiresult/', views.bmiresult, name='bmiresult'),
     path('addhealthinfo/', views.addhealthinfo, name='addhealthinfo'),
+    path('dietrecord/', views.dietrecord, name='dietrecord'),
+    path('viewdietrecord/', views.viewdietrecord, name='viewdietrecord'),
+    path('exerciserecord/', views.exerciserecord, name='exerciserecord'),
+    path('viewexerciserecord/', views.viewexerciserecord,
+         name='viewexerciserecord'),
 
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

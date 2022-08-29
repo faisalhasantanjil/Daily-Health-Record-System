@@ -6,8 +6,11 @@
 
 {% block content %}
 <div class="container">
-    <div class="w-50 mx-auto border border-info rounded border-3 mt-5">
-        <div class=" mxauto p-5 ">
+    <div class="w-50 mx-auto border border-secondary rounded border-3 mt-5">
+        <div class=" mt-3 mx-5 ">
+            <p class="h3">Log into Your Account</p>
+        </div>
+        <div class=" mx-auto p-5 ">
             <form method="POST" action="">
                 {% csrf_token %}
                 <!-- Email input -->
@@ -33,15 +36,15 @@
 
             </form>
             {% for message in messages  %}
-            <p id='messages'>{{message}} </p>
+            <p class='text-danger' id='messages'>{{message}} </p>
             {% endfor %}
             <div class="text-center">
                 <p>Not a member? <a href={% url 'registeruser' %}>Register</a></p>
-                <p>or signin with:</p>
+                {% comment %} <p>or signin with:</p>
 
                 <button type="button" class="btn btn-link btn-floating mx-1">
                     <i class="fab fa-google"></i>
-                </button>
+                </button> {% endcomment %}
             </div>
         </div>
     </div>

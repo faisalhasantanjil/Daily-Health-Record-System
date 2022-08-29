@@ -1,0 +1,219 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>Diet Record</title>
+{% endblock title %}
+
+{% block content %}
+{% comment %} {{form}} {% endcomment %}
+
+
+
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="container">
+
+            <div class="row">
+                <p>Time : {{form.time}}
+                <p>
+            </div>
+
+
+            <div class="row">
+                <div class="col-1">
+                    <p>Chicken :</p>
+                </div>
+                <div class="col-2">
+                    {{form.chicken}}
+                </div>
+                <div class="col-1 ms-3">
+                    {{form.chicken_unit}}
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-1">
+                    <p>Beef :</p>
+                </div>
+                <div class="col-2">
+                    {{form.beef}}
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.beef_unit}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <p>Lantil :</p>
+                </div>
+                <div class="col-2">
+                    {{form.lantil}}
+                </div>
+                <div class="col-1 ms-3">
+                    {{form.lantil_unit}}
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-1">
+                    <p>Mutton :</p>
+                </div>
+                <div class="col-2">
+                    {{form.mutton}}
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.mutton_unit}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>Broccoli :</p>
+                </div>
+                <div class="col-2">
+                    {{form.broccoli}}
+                </div>
+                <div class="col-1 ms-3">
+                    {{form.broccoli_unit}}
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-1">
+                    <p>Potaotes :</p>
+                </div>
+                <div class="col-2">
+                    {{form.potatoes}}
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.potatoes_unit}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>Corn :</p>
+                </div>
+                <div class="col-2">
+                    {{form.corn}}
+                </div>
+                <div class="col-1 ms-3">
+                    {{form.corn_unit}}
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-1">
+                    <p>Apple :</p>
+                </div>
+                <div class="col-2">
+                    {{form.apple}}
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.apple_unit}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>Banana :</p>
+                </div>
+                <div class="col-2">
+                    {{form.banana}}
+                </div>
+                <div class="col-1 ms-3">
+                    {{form.banana_unit}}
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-1">
+                    <p>Orange :</p>
+                </div>
+                <div class="col-2">
+                    {{form.orange}}
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.orange_unit}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>Rice :</p>
+                </div>
+                <div class="col-2">
+                    {{form.rice}}
+                </div>
+                <div class="col-1 ms-3">
+                    {{form.rice_unit}}
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-1">
+                    <p>Bread :</p>
+                </div>
+                <div class="col-2">
+                    {{form.bread}}
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.bread_unit}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>Fish :</p>
+                </div>
+                <div class="col-2">
+                    {{form.fish}}
+                </div>
+                <div class="col-1 ms-3">
+                    {{form.fish_unit}}
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-1">
+                    <p>Milk :</p>
+                </div>
+                <div class="col-2">
+                    {{form.milk}}
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.milk_unit}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <p>Yogurt :</p>
+                </div>
+                <div class="col-2">
+                    {{form.yogurt}}
+                </div>
+                <div class="col-1 ms-3">
+                    {{form.yogurt_unit}}
+                </div>
+                <div class="col-1">
+
+                    {% comment %} </div>
+                <div class="col-1">
+                    <p>Beef :</p>
+                </div>
+                <div class="col-2">
+                    {{form.beef}}
+                </div>
+                <div class="col-2 ms-3">
+                    {{form.beef_unit}}
+                </div> {% endcomment %}
+            </div>
+
+
+        </div>
+        {% comment %} <div class="float-end p-5"><input type="submit" name="User information Create" value="Update"></div> {% endcomment %}
+        
+        <button type="button" class="btn btn-link btn-lg btn-floating mx-1">
+            <input type="submit" value="Submit">
+        </button>
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,71 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}
+<title>View Your Record</title>
+{% endblock title %}
+{% block content %}
+{% comment %} {% for record in records %}
+<a href="{{record.upload_file.url}}" download=>{{record.upload_file}}</a>
+<br>
+{{record.upload_date}}
+<br>
+{% endfor %} {% endcomment %}
+
+<div class="container w-100 pt-5 mt-5">
+    <p class="h1 text-secondary">Your Diet Records</p>
+</div>
+<div class="container w-100 pt-5 ">
+    <div>
+        <table class="table table-secondary table-bordered" style='font-size: 13.5px'>
+            <thead>
+                <tr>
+                    <th scope="col">Time</th>
+                    <th scope="col">Chicken</th>
+                    <th scope="col">Beef</th>
+                    <th scope="col">Lantil</th>
+                    <th scope="col">Mutton</th>
+                    <th scope="col">Broccoli</th>
+                    <th scope="col">Potato</th>
+                    <th scope="col">Corn</th>
+                    <th scope="col">Apple</th>
+                    <th scope="col">Banana</th>
+                    <th scope="col">Orange</th>
+                    <th scope="col">Rice</th>
+                    <th scope="col">Bread</th>
+                    <th scope="col">Fish</th>
+                    <th scope="col">Milk</th>
+                    <th scope="col">Yogurt</th>
+                    <th scope="col">Updated date   </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dietrecord in dietrecords %}
+                <tr >
+                    <td>{{dietrecord.time}}</td>
+                    <td>{{dietrecord.chicken}} gram </td>
+                    <td>{{dietrecord.beef}} gram </td>
+                    <td>{{dietrecord.lantil}} gram </td>
+                    <td>{{dietrecord.mutton}} gram </td>
+                    <td>{{dietrecord.broccoli}} gram </td>
+                    <td>{{dietrecord.potatoes}} gram </td>
+                    <td>{{dietrecord.corn}} gram </td>
+                    <td>{{dietrecord.apple}} piece </td>
+                    <td>{{dietrecord.banana}} piece </td>
+                    <td>{{dietrecord.orange}} piece </td>
+                    <td>{{dietrecord.rice}} cup </td>
+                    <td>{{dietrecord.bread}} piece </td>
+                    <td>{{dietrecord.fish}} gram </td>
+                    <td>{{dietrecord.milk}} liter </td>
+                    <td>{{dietrecord.yogurt}} cup </td>
+                    <td>{{dietrecord.update_date}}</td>
+                    
+                    
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

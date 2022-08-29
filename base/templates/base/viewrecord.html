@@ -4,10 +4,44 @@
 <title>View Your Record</title>
 {% endblock title %}
 {% block content %}
-{% for record in records %}
+{% comment %} {% for record in records %}
 <a href="{{record.upload_file.url}}" download=>{{record.upload_file}}</a>
 <br>
 {{record.upload_date}}
 <br>
-{% endfor %}
+{% endfor %} {% endcomment %}
+
+<div class="container w-100 pt-5 mt-5">
+    <p class="h1 text-secondary">Your Records</p>
+</div>
+<div class="container w-100 pt-5 ">
+    <div>
+        <table class="table table-info table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Referenced By</th>
+                    <th scope="col">File name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Download File</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{record.typeofrecord}}</td>
+                    <td>{{record.referBy}}</td>
+                    <td>{{record.upload_file}}</td>
+                    <td>{{record.upload_date}}</td>
+                    <td><Button><a href="{{record.upload_file.url}}" download class="text-decoration-none">Download
+                                File</a></Button>
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock content %}

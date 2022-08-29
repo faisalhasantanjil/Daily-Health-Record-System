@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block title %}
+<title>View Your Record</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container w-100 pt-5 mt-5">
+    <p class="h1 text-secondary">Your Exercise Records</p>
+</div>
+<div class="container w-100 pt-5 ">
+    <div>
+        <table class="table table-secondary table-bordered" style='font-size: 13.5px'>
+            <thead>
+                <tr>
+                    <th scope="col">Date      </th>
+                    <th scope="col">Walking</th>
+                    <th scope="col">Walking Distance</th>
+                    <th scope="col">Jogging</th>
+                    <th scope="col">Jogging Distance</th>
+                    <th scope="col">Running</th>
+                    <th scope="col">Running Distance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exerciserecord in exerciserecords %}
+                <tr >
+                    <td>{{exerciserecord.update_date}}</td>
+                    <td>{{exerciserecord.walking}} {{exerciserecord.walking_unit}}  </td>
+                    <td>{{exerciserecord.walking_distance}} km</td>
+                    <td>{{exerciserecord.jogging}} {{exerciserecord.jogging_unit}}  </td>
+                    <td>{{exerciserecord.jogging_distance}} km</td>
+                    <td>{{exerciserecord.running}} {{exerciserecord.running_unit}} </td>
+                    <td>{{exerciserecord.running_distance}} km</td>
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
