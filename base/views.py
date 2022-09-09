@@ -20,7 +20,7 @@ def home(request):
     user = request.user
     user_email = request.user.email
     userinfo = UserInformation.objects.filter(email=user_email)
-    print(userinfo)
+    # print(userinfo)
 
     valid_users = list(UserInformation.objects.all().values('email'))
     valid = False
@@ -62,12 +62,8 @@ def registeruser(request):
 
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
-        # request.POST['username'] = request.POST['email']
         form.instance.username = request.POST['email']
-        # print(form.instance.username)
-        # print(form)
         if form.is_valid():
-            # print(form.instance.username)
             form.save()
             email = form.cleaned_data.get('email')
             messages.success(
@@ -82,9 +78,7 @@ def registeruser(request):
 def userinfo(request):
 
     form = UserInformationForm()
-    # print(form)
     user_email = request.user.email
-    # print(f'Hello there {user_email}')
     if request.method == 'POST':
         form = UserInformationForm(request.POST)
         feet = request.POST['feetheight']
@@ -135,7 +129,7 @@ def addrecord(request):
     if request.method == 'POST':
         form = RecordFileForm(request.POST, request.FILES)
         form.instance.email = user_email
-        print(form)
+        # print(form)
         if form.is_valid():
             form.save()
             return redirect('home')
@@ -159,7 +153,7 @@ def viewrecord(request):
         return redirect('userinfo')
 
     records = RecordFile.objects.filter(email=user_email)
-    print(records.datetimes)
+    # print(records.datetimes)
     # print(records.__dict__.keys())
     context = {'records': records}
     return render(request, 'base/viewrecord.html', context)
@@ -228,14 +222,13 @@ def addhealthinfo(request):
     valid = False
 
     for valid_user in valid_users:
-        if valid_user["email"] == user_email:
+        if valid_user['email'] == user_email:
             valid = True
 
     if not valid:
         return redirect('userinfo')
 
     form = HealthInfoForm()
-    # user_email = request.user.email
     healthinfos = HealthInfo.objects.filter(email=user_email)
     if request.method == 'POST':
         form = HealthInfoForm(request.POST)

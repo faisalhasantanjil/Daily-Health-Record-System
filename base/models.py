@@ -82,52 +82,52 @@ class DietRecord(models.Model):
     email = models.CharField(max_length=200, null=True, default='')
     chicken = models.FloatField(null=True, default=0, blank=True)
     chicken_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     beef = models.FloatField(null=True, default=0, blank=True)
     beef_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     lantil = models.FloatField(null=True, default=0, blank=True)
     lantil_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     mutton = models.FloatField(null=True, default=0, blank=True)
     mutton_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     broccoli = models.FloatField(null=True, default=0, blank=True)
     broccoli_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     potatoes = models.FloatField(null=True, default=0, blank=True)
     potatoes_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     corn = models.FloatField(null=True, default=0, blank=True)
     corn_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     apple = models.FloatField(null=True, default=0, blank=True)
     apple_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='piece')
     banana = models.FloatField(null=True, default=0, blank=True)
     banana_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='piece')
     orange = models.FloatField(null=True, default=0, blank=True)
     orange_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='piece')
     rice = models.FloatField(null=True, default=0, blank=True)
     rice_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     wheat = models.FloatField(null=True, default=0, blank=True)
     wheat_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     bread = models.FloatField(null=True, default=0, blank=True)
     bread_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='piece')
     fish = models.FloatField(null=True, default=0, blank=True)
     fish_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='gram')
     milk = models.FloatField(null=True, default=0, blank=True)
     milk_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='liter')
     yogurt = models.FloatField(null=True, default=0, blank=True)
     yogurt_unit = models.CharField(
-        max_length=100, null=True, choices=FOODUNIT, blank=True)
+        max_length=100, null=True, choices=FOODUNIT, blank=True, default='cup')
 
     time = models.CharField(max_length=100, null=True, choices=EATINGTIME)
     update_date = models.DateTimeField(auto_now_add=True, null=True)

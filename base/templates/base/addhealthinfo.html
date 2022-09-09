@@ -12,12 +12,12 @@
             <div class="row">
                 <div class="col">{{form.blood_sugar.label}} </div>
                 <div class="col">{{form.blood_pressure.label}} </div>
-                <div class="col">{{form.weight.label}} </div>
+                <div class="col">{{form.weight.label}}</div>
             </div>
             <div class="row">
-                <div class="col">{{form.blood_sugar}} </div>
+                <div class="col">{{form.blood_sugar}} mg/dl </div>
                 <div class="col">{{form.blood_pressure}} </div>
-                <div class="col">{{form.weight}} </div>
+                <div class="col">{{form.weight}} kg </div>
             </div>
             <br>
             <div class="float-end"><input type="submit" name="User information Create" value="Update"></div>
@@ -38,9 +38,9 @@
             <tbody>
                 {% for healthinfo in healthinfos %}
                 <tr>
-                    <td>{{healthinfo.blood_sugar}}</td>
+                    <td>{{healthinfo.blood_sugar}} mg/dl</td>
                     <td>{{healthinfo.blood_pressure}}</td>
-                    <td>{{healthinfo.weight}}</td>
+                    <td>{{healthinfo.weight}} kg</td>
                     <td>{{healthinfo.update_date}}</td>
                   </tr>
                 {% endfor %}

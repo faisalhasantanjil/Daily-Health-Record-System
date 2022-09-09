@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block title %}
-<title>View Your Record</title>
+<title>View Food Record</title>
 {% endblock title %}
 {% block content %}
 {% comment %} {% for record in records %}
@@ -12,7 +12,7 @@
 {% endfor %} {% endcomment %}
 
 <div class="container w-100 pt-5 mt-5">
-    <p class="h1 text-secondary">Your Diet Records</p>
+    <p class="h1 text-secondary">Your Food Records</p>
 </div>
 <div class="container w-100 pt-5 ">
     <div>
@@ -42,21 +42,21 @@
                 {% for dietrecord in dietrecords %}
                 <tr >
                     <td>{{dietrecord.time}}</td>
-                    <td>{{dietrecord.chicken}} gram </td>
-                    <td>{{dietrecord.beef}} gram </td>
-                    <td>{{dietrecord.lantil}} gram </td>
-                    <td>{{dietrecord.mutton}} gram </td>
-                    <td>{{dietrecord.broccoli}} gram </td>
-                    <td>{{dietrecord.potatoes}} gram </td>
-                    <td>{{dietrecord.corn}} gram </td>
-                    <td>{{dietrecord.apple}} piece </td>
-                    <td>{{dietrecord.banana}} piece </td>
-                    <td>{{dietrecord.orange}} piece </td>
-                    <td>{{dietrecord.rice}} cup </td>
-                    <td>{{dietrecord.bread}} piece </td>
-                    <td>{{dietrecord.fish}} gram </td>
-                    <td>{{dietrecord.milk}} liter </td>
-                    <td>{{dietrecord.yogurt}} cup </td>
+                    <td>{{dietrecord.chicken}} {{dietrecord.chicken_unit}}</td>
+                    <td>{{dietrecord.beef}} {{dietrecord.beef_unit}}  </td>
+                    <td>{{dietrecord.lantil}} {{dietrecord.lantil_unit}}  </td>
+                    <td>{{dietrecord.mutton}} {{dietrecord.mutton_unit}}  </td>
+                    <td>{{dietrecord.broccoli}} {{dietrecord.broccoli_unit}}  </td>
+                    <td>{{dietrecord.potatoes}} {{dietrecord.potatoes_unit}}  </td>
+                    <td>{{dietrecord.corn}} {{dietrecord.corn_unit}}  </td>
+                    <td>{{dietrecord.apple}} {{dietrecord.apple_unit}}  </td>
+                    <td>{{dietrecord.banana}} {{dietrecord.banana_unit}}  </td>
+                    <td>{{dietrecord.orange}} {{dietrecord.orange_unit}}  </td>
+                    <td>{{dietrecord.rice}} {{dietrecord.rice_unit}}  </td>
+                    <td>{{dietrecord.bread}} {{dietrecord.bread_unit}}  </td>
+                    <td>{{dietrecord.fish}} {{dietrecord.fish_unit}}  </td>
+                    <td>{{dietrecord.milk}} {{dietrecord.milk_unit}}  </td>
+                    <td>{{dietrecord.yogurt}} {{dietrecord.yogurt_unit}}  </td>
                     <td>{{dietrecord.update_date}}</td>
                     
                     
