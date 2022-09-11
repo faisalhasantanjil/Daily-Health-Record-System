@@ -62,8 +62,12 @@ def registeruser(request):
 
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
+        # request.POST['username'] = request.POST['email']
         form.instance.username = request.POST['email']
+        # print(form.instance.username)
+        # print(form)
         if form.is_valid():
+            # print(form.instance.username)
             form.save()
             email = form.cleaned_data.get('email')
             messages.success(
@@ -78,7 +82,9 @@ def registeruser(request):
 def userinfo(request):
 
     form = UserInformationForm()
+    # print(form)
     user_email = request.user.email
+    # print(f'Hello there {user_email}')
     if request.method == 'POST':
         form = UserInformationForm(request.POST)
         feet = request.POST['feetheight']
@@ -222,13 +228,14 @@ def addhealthinfo(request):
     valid = False
 
     for valid_user in valid_users:
-        if valid_user['email'] == user_email:
+        if valid_user["email"] == user_email:
             valid = True
 
     if not valid:
         return redirect('userinfo')
 
     form = HealthInfoForm()
+    # user_email = request.user.email
     healthinfos = HealthInfo.objects.filter(email=user_email)
     if request.method == 'POST':
         form = HealthInfoForm(request.POST)
