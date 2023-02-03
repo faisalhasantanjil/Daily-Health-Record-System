@@ -2,7 +2,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="px-5 container-fluid">
         <img src="{% static 'images/logo.jpg' %}" alt="" width="50" height="65">
-        {% comment %} <p class="h6"><a class="navbar-brand" href="/home"><i>Patient</i></a></p> {% endcomment %}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,24 +24,16 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/addrecord">Add a new record</a></li>
-                        <!-- <li>
-                            <hr class="dropdown-divider">
-                        </li> -->
                         <li><a class="dropdown-item" href="/addhealthinfo">Add Health Information</a></li>
                         <li><a class="dropdown-item" href="/dietrecord">Add Food Record</a></li>
                         <li><a class="dropdown-item" href="/exerciserecord">Add Exercise Record</a></li>
                     </ul>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li> -->
+                
             </ul>
             <button><a class="text-decoration-none link-dark" href="{% url 'logoutuser' %}">Logout</a></button>
 
-            {% comment %} <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> {% endcomment %}
+            
         </div>
     </div>
 </nav>

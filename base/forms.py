@@ -25,14 +25,12 @@ class UserInformationForm(ModelForm):
 class RecordFileForm(ModelForm):
     class Meta:
         model = RecordFile
-        # fields = ['patient', 'referBy', 'typeofrecord', 'upload_file']
         fields = ['referBy', 'typeofrecord', 'upload_file']
 
 
 class HealthInfoForm(ModelForm):
     class Meta:
         model = HealthInfo
-        # fields = ['patient', 'referBy', 'typeofrecord', 'upload_file']
         fields = ['blood_sugar', 'blood_pressure', 'weight']
 
 

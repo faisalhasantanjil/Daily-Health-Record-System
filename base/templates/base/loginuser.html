@@ -30,9 +30,7 @@
                 <button type="button" class="btn btn-link btn-lg btn-floating mx-1">
                     <input type="submit" value="Login">
                 </button>
-                <!-- <input type="button" class="btn btn-primary btn-block mb-4">Sign in</button> -->
-
-                <!-- Register buttons -->
+               
 
             </form>
             {% for message in messages  %}
@@ -40,11 +38,7 @@
             {% endfor %}
             <div class="text-center">
                 <p>Not a member? <a href={% url 'registeruser' %}>Register</a></p>
-                {% comment %} <p>or signin with:</p>
-
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-google"></i>
-                </button> {% endcomment %}
+                
             </div>
         </div>
     </div>
